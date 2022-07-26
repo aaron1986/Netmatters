@@ -1,0 +1,43 @@
+@media (min-width: 769px) {
+    header, .row {
+        display: flex;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.col {
+    flex: 1;
+}
+
+@media (min-width: 992px) {
+    .img-cover-container > .h1 {
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+    .col-md-4 {
+        width: 33%;
+        height:400px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    col.lg-3 {
+        float: left;
+    }
+}
+
+@media (min-width: 1260px) {
+    .container {
+        width: 1200px;
+    }
+    
+}
