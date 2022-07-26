@@ -1,0 +1,350 @@
+
+/*----------- VARIABLES -------------*/
+
+@mixin section-h1 {
+    color: #333645;
+    margin-bottom: 10px;
+    font-size: 2.7rem;
+    margin-top: -13px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: 600;
+    margin-top: -13px;
+}
+
+@mixin span-icon {
+    height: 65px;
+    width: 65px;
+    margin: 0 auto 17px;
+    color: #fff;
+    border-radius: 50%;
+    padding-top: 4%;
+}
+
+@mixin block-squares {
+    text-decoration: none;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    position: relative;
+    padding-top: 14%;
+    transition: .5s ease;
+    box-shadow: 0 3px 35px rgba(0,0,0,.1);
+}
+
+
+@mixin btn {
+    color: #fff;
+    background-color: #67809f;
+    border-color: #67809f;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-size: 1.063rem;
+    border-radius: 3px;
+    white-space: normal;
+  }
+
+
+  @mixin btn-container {
+    height: auto;
+  line-height: 35px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 1.063rem;
+  border-radius: 3px;
+  white-space: normal;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  }
+  
+$services-color: #333645;
+$color: #fff;
+$software-color:#67809f;
+$it-color: #4183d7;
+$digital-color: #2ecc71;
+$telecoms-color: #d64541;
+$web-color: #926fb1;
+$security-color: #de093f;
+
+
+@mixin block {
+    display:block;
+  }
+
+  @mixin block-hover {
+    border-color: transparent;
+    top: -10px;
+    transition: .5s ease;
+  }
+
+  @mixin btn-hover {
+    padding: 5px 15px;
+    border-radius: 0%;
+  }
+/* ---------- Middle ------------ */
+.container.h2 {
+    padding-top: 3%;
+  }
+  
+  .services-heading {
+    font-weight: 600;
+    color: $services-color;
+    font-size: 2.7rem;
+  }
+  
+  .container.section {
+    display: grid;
+    /*grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: minmax(400px, 1fr);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  } 
+  
+  .col-md-4 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .col-lg-3 {
+   grid-row-start: 3;
+   grid-row-end: 3;
+   display: grid;
+  }
+  
+  .container.grid {
+    display: grid;
+    margin-left: -4%;
+  }
+
+  .section > .h1{
+    @include section-h1;
+  }
+  
+  .block.software, .block-it, .block-digital {
+    @include block-squares;
+    width:370px;
+  height: 304px;
+  }
+
+  .block-telecoms, .block-web, .block-security, .block-developer-course  {
+    @include block-squares;
+    width: 270px;
+    height: 313px;
+  }
+
+  span.h2 {
+    @include block;
+    font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 10px;
+  margin: 0 0 11px;
+  }
+
+  span.p {
+    font-size: .8125rem;
+  line-height: 1.375rem;
+  margin-bottom: 13px;
+  font-weight: 400;
+  }
+  
+  span.btn-container {
+    color: $software-color;
+  }
+
+  span.icon > .fas.fa-bars {
+    @include span-icon;
+    background-color: $software-color;
+  }
+
+  span.icon > .fas.fa-desktop {
+    @include span-icon;
+    background-color: $it-color;
+  }
+  
+  span.icon > .fas.fa-signal {
+    @include span-icon;
+    background-color: $digital-color;
+  }
+
+  span.icon > .fa-solid.fa-phone {
+    @include span-icon;
+    background-color: $telecoms-color;
+  }
+  
+  span.icon > .fa-solid.fa-code {
+    @include span-icon;
+    background-color: $web-color;
+  }
+  
+  span.icon > .fa-solid.fa-shield {
+    @include span-icon;
+    background-color: $security-color;
+  }
+
+  span.icon > .fa-graduation-cap {
+    @include span-icon;
+    background-color: $telecoms-color;
+  }
+  
+
+  .btn-container{
+    @include btn-container;
+   }
+
+  .btn-software {
+    @include btn;
+    background-color: $software-color;
+  }
+  
+  .block.software {
+    background-color: $color;
+    color: $software-color;
+    &:hover {
+    @extend .btn-software;
+    .btn-software {
+      @extend .block.software;
+      @include btn-hover;
+    }
+    }
+
+   
+  }
+
+  .btn-it {
+    @include btn;
+    background-color: $it-color;
+  }
+
+  .block-it {
+    background-color: $color;
+    color: $it-color;
+    &:hover {
+        @extend .btn-it;
+        .btn-it {
+         @extend .block-it;
+         @include btn-hover;
+        }
+      
+    }
+  }
+  
+  .btn-digital {
+    @include btn;
+    background-color: $digital-color;
+  }
+
+  .block-digital {
+    background-color: $color;
+    color: $digital-color;
+    &:hover {
+        @extend .btn-digital;
+        .btn-digital {
+          @extend .block-digital;
+          @include btn-hover;
+        }
+      
+    }
+  }
+
+  .btn-telecoms {
+    @include btn;
+    background-color: $telecoms-color;
+  }
+
+  .block-telecoms {
+    background-color: $color;
+    color: $telecoms-color;
+    &:hover {
+        @extend .btn-telecoms;
+        .btn-telecoms {
+          @extend .block-telecoms;
+          @include btn-hover;
+        }
+    }
+  }
+  
+  .btn-web {
+    @include btn;
+    background-color: $web-color;
+  }
+
+  .block-web {
+    background-color: $color;
+    color: $web-color;
+    &:hover {
+        @extend .btn-web;
+        .btn-web {
+          @extend .block-web;
+          @include btn-hover;
+        }
+    }
+  }
+
+  .btn-security {
+    @include btn;
+    background-color: $security-color;
+  }
+
+  .block-security {
+    background-color: $color;
+    color: $security-color;
+    &:hover {
+        @extend .btn-security;
+        .btn-security{
+          @extend .block-security;
+          @include btn-hover;
+        }
+    }
+  }
+
+  .btn-developer-course {
+    @include btn;
+    background-color: $telecoms-color;
+  }
+
+  .block-developer-course {
+    background-color: $color;
+    color: $telecoms-color;
+    &:hover {
+        @extend .btn-developer-course;
+        .btn-developer-course {
+          @extend .block-developer-course;
+         @include btn-hover;
+        }
+    }
+  }
+
+  /* ------- CAROUSEL --------- */
+
+.section.carousel {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    display: flex;
+    z-index: 100;
+    justify-content: space-evenly;
+  }
+  
+  .list-sliding {
+    z-index: 100;
+  }
+  
+  .owl-item.cloned {
+    animation: carouselAnimation 50s infinite alternate linear;
+  }
+  
+  @keyframes carouselAnimation {
+    from {
+        transform: translate(0,0);
+    }
+  
+    to {
+      transform: translate(calc(100% - (4 * 300px)));
+    }
+  }

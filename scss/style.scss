@@ -1,0 +1,27 @@
+@import '../scss/partials/header',
+        '../scss/partials/img-cover',
+        '../scss/partials/our-services',
+        '../scss/partials/brand-background',
+        '../scss/partials/latest-articles',
+        '../scss/partials/newsletter',
+        '../scss/partials/footer';
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+  }
+  
+  body {
+    font-family: $font-body;
+    font-size: 1rem;
+    letter-spacing: .4px;
+    color: #666;
+  }
+  
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    width: 1200px;
+    }

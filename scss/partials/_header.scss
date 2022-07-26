@@ -1,0 +1,289 @@
+/*---------- VARIABLES ------------*/
+
+$btn-height: 56px;
+$btn-width: 135px;
+$btn-line-height:46px;
+$btn-background: #4183d7;
+$btn-color: #fff;
+$search-btn-width:70px;
+
+$font-body: Poppins, sans-serif;
+
+
+/*-------- SEARCH BAR -----------*/
+
+$search-width: 350px;
+
+
+/*--------------------------------*/
+
+header {
+    background-color: $btn-color;
+  }
+  
+  .inner {
+    padding: 20px 0;
+   
+  }
+
+  .actions {
+    margin-left: 13%;
+    display: flex;
+  }
+
+  .btn {
+    height: $btn-height;
+    width: $btn-width;
+    color: $btn-color;
+
+    &-support {
+        background-color: $btn-background;
+        &:hover {
+            background-color: #2a6ec6;
+            border-color: #2665b5;
+            color:$btn-color;
+        }
+    }
+
+    &-contact {
+        background-color: #999aa2;
+        &:hover {
+            background-color: #84858f;
+            border-color: #797a85;
+            color:$btn-color;
+        }
+    }
+  }
+
+  a.btn {
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+
+  .search-form {
+    padding: 0 15px;
+    border-bottom-color: #ccc;
+    display: inline-flex;
+    width: $search-width;
+    height: $btn-height;
+
+    .search-bar {
+        height: $btn-height;
+    }
+
+    #search-submit {
+        width: $search-btn-width;
+    }
+
+  }
+
+  /*--------------- MAIN NAVIGATION -------------------*/
+
+  /* VARIABLES */
+  $navigation-color: #333645;
+
+  $software-color: #526781;
+  $it-color: #286abd;
+  $digital-color: #25a25a;
+  $telecoms-color: #bc2c28;
+  $web-color: #79539a;
+  $security-color: #de093f;
+
+  @mixin container-size {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  @mixin links {
+    padding: .625rem .938rem;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    line-height: 1.313rem;
+  }
+
+  @mixin naviagtion-header {
+    position: relative;
+    display: block;
+    color: #fff;
+    padding: 19px 0 18px;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  @mixin block {
+    display:block;
+  }
+
+  .main-navigation {
+    background-color: $navigation-color;
+    position: relative;
+    z-index: 100;
+    height: 99px;
+    text-align: center;
+
+  .container.main-navigation {
+    @include container-size;
+    }
+  }
+
+  span.fas.fa-bars, span.fas.fa-desktop, span.fas.fa-signal, span.fa-solid.fa-phone, span.fa-solid.fa-code, span.fa-solid.fa-shield, span.fa-solid.fa-graduation-cap, small {
+    @include block;
+    padding-bottom: 15px;
+  }
+
+  .main-navigation .container > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-left: -9%;
+
+   li {
+    margin-left: 8%;
+
+    a > span {
+        font-size: 1.438rem;
+        @include block;
+        padding-bottom: 10px;
+    }
+    
+    small {
+    @include block;
+    font-size: .625rem;
+    padding-bottom: 1px;
+    }
+
+     ul {
+      padding: .313rem 0;
+      display: none;
+      
+      
+      list-style: none;
+      border-radius: 0 0 .625rem .625rem;
+  }
+}
+  }
+
+/*--- navbar headings ----*/
+.main-navigation .container > ul > li > a {
+  @include naviagtion-header;
+  }
+
+
+  /*------- SOFTWARE---------- */
+
+  ul > .bespoke > a:hover {
+    background-color: $software-color;
+  }
+  
+  ul > li:hover > ul.software {
+    @include block;
+    @extend a:hover;
+  }
+  
+  .software > li > a {
+    @include links;
+  }
+
+  /*------ IT ------------*/
+
+ul > .IT > a:hover {
+  background-color: $it-color;
+}
+
+ul > li:hover > ul.it {
+  @include block;
+  @extend a:hover;
+}
+
+.it > li > a {
+  @include links;
+}
+
+/*---------- DIGITAL --------------*/
+
+ul > .marketing > a:hover {
+  background-color: $digital-color;
+}
+
+ul > li:hover > ul.digital {
+  @include block;
+  @extend a:hover;
+
+}
+
+.digital > li > a {
+  @include links;
+}
+
+/*-------- TELECOMS ---------*/
+
+ul > .services > a:hover {
+  background-color: $telecoms-color;
+
+}
+
+ul > li:hover > ul.telecoms {
+  @include block;
+  @extend a:hover;
+}
+
+.telecoms > li > a {
+  @include links;
+}
+
+/*------- WEB --------*/
+
+ul > .web-design > a:hover {
+  background-color: $web-color;
+}
+
+ul > li:hover > ul.web {
+  @include block;
+  @extend a:hover;
+
+}
+
+.web > li > a {
+  @include links;
+}
+
+/*-------- SECURITY ---------*/
+
+ul > .cyber > a:hover {
+  background-color: $security-color;
+}
+
+ul > li:hover > ul.security {
+  @include block;
+  @extend a:hover;
+
+}
+
+.security > li > a {
+  @include links;
+}
+
+/*--------- DEVELOPER ----------*/
+
+ul > .developer > a:hover {
+  background-color: $telecoms-color;
+}
+
+ul > li:hover > ul.developer-course {
+  @include block;
+  @extend a:hover;
+
+}
+
+.developer-course > li > a {
+  @include links;
+}

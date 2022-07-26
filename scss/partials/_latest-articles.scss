@@ -1,0 +1,146 @@
+/*------------ VARIABLES ---------------*/
+
+@mixin weight {
+    front-weight: 600;
+}
+
+@mixin flex-space {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin block {
+    display: block;
+    border: 1px solid #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 3px 35px rgba(0,0,0,.1);
+}
+
+@mixin category {
+    position: absolute;
+    top: 6%;
+    right: 0;
+    color: #fff;
+    background-color: #333645;
+    font-size: .75rem;
+    padding: 0 10px;
+    line-height: 1.438rem;
+    text-transform: uppercase;
+    z-index: 1;
+    background-color: #926fb1;
+    }
+
+@mixin user {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    width: 100%;
+    font-size: .875rem;
+}
+
+
+/*-------- latest articles ----------*/
+
+.articles-container {
+    padding-top:50px;
+    @include flex-space;
+    align-items: baseline;
+    width: 100%;
+
+    h2.h1.float-left-sm > strong {
+        @include weight;
+        color: $services-color;
+      }
+  }
+  
+  
+ 
+  
+  /*---- OUR SERVICES SECTION -----*/
+  
+  .article-list {
+    @include flex-space;
+    .item {
+        font-size: .8125rem;
+        margin-top: 30px;
+        position: relative;
+        top: 0;
+        transition: .5s ease;
+        display: flex;
+        }
+
+         .img-container .category {
+            @include category;
+         }
+        .user {
+            @include user;
+        }
+  }
+  
+
+  
+  .item.web, .item.software {
+    display:grid;
+     a {
+      color:#926fb1;
+      @include weight;
+     }
+  }
+  
+  
+  .article-list .item.web {
+    color:#666;
+    @include weight;
+  }
+  
+  .article-list .item.software {
+
+    .img-container .category {
+    color: $color;
+    @include weight;
+    }
+
+  }
+  
+  
+  .article-list .item .block {
+    @include block;
+    h3 {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+      p {
+    line-height: 1.375rem;
+    font-size: .8125rem;
+  }
+  }
+  
+  
+  .article-list .item .article-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding:10%;
+  }
+  
+  .img .img-responsive {
+    width: 350px;
+  }
+  
+  /*------- List section ----------> */
+  
+  .section.clients.hidden-xs {
+    padding: 3%;
+  }
+  
+  .section.clients.hidden-xs > .container {
+    @include flex-space;
+  }
